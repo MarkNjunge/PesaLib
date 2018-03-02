@@ -1,0 +1,3 @@
+build
+src/sample.ts
+*.log
