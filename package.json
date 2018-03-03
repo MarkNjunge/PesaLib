@@ -11,6 +11,15 @@
     "prestart": "tsc",
     "start": "node build/sample.js"
   },
+  "keywords": ["mpesa"],
+  "bugs": {
+    "email": "mark.kamau@outlook.com",
+    "url": "https://github.com/MarkNjunge/PesaLib/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarkNjunge/PesaLib.git"
+  },
   "author": "Mark Njung'e",
   "license": "MIT",
   "dependencies": {
