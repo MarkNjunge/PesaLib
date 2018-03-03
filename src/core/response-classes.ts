@@ -38,3 +38,9 @@ export class ApiError {
     this.errorMessage = error.errorMessage;
   }
 }
+
+export class C2bResponse {
+  public ConversationID: string;
+  public OriginatorCoversationID: string;
+  public ResponseDescription: string;
+}

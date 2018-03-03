@@ -17,12 +17,12 @@ function oAuth() {
     .catch(error => console.log(JSON.stringify(error)));
 }
 
-function lnmo() {
+function lnmoProcess() {
   pesa
     .lnmProcess(
       "1",
-      "254724721377",
-      "https://us-central1-mpesahandler.cloudfunctions.net/callback_url",
+      "254721234567",
+      "https://mpesa-handler/callback_url",
       "Test",
       "test"
     )
@@ -33,7 +33,7 @@ function lnmo() {
     });
 }
 
-function lnmo2() {
+function lnmoQuery() {
   pesa
     .lnmQuery("ws_CO_02032018014643109")
     .then(value => console.log(value.ResultDesc))
@@ -42,4 +42,18 @@ function lnmo2() {
       const err = new ApiError(error.message);
       console.log(err.errorMessage);
     });
+}
+
+function c2bRegister() {
+  pesa
+    .c2bRegister("http://266522a4.ngrok.io", "http://266522a4.ngrok.io")
+    .then(response => console.log(response))
+    .catch(error => console.log(error.message));
+}
+
+function c2bSimulate() {
+  pesa
+    .c2bSimulate(1, 254721234567, "Test billing", "CustomerBuyGoodsOnline")
+    .then(response => console.log(response))
+    .catch(error => console.log(error.message));
 }

@@ -1,4 +1,4 @@
-import * as core from "./core";
+import { c2b, lnm, oAuth, responses } from "./core";
 
 export default class PesaLib {
   public consumerKey: string;
@@ -31,8 +31,8 @@ export default class PesaLib {
     this.baseUrl = baseUrl;
   }
 
-  public oAuth(): Promise<core.responses.OauthResponse> {
-    return core.oAuth(this);
+  public oAuth(): Promise<responses.OauthResponse> {
+    return oAuth(this);
   }
 
   public lnmProcess(
@@ -41,8 +41,8 @@ export default class PesaLib {
     callbackUrl: string,
     accountRef: string,
     transactionDesc: string
-  ): Promise<core.responses.LnmProcessResponse> {
-    return core.lnm.process(
+  ): Promise<responses.LnmProcessResponse> {
+    return lnm.process(
       this,
       amount,
       phoneNumber,
@@ -52,7 +52,23 @@ export default class PesaLib {
     );
   }
 
-  public lnmQuery(checkoutRequestId): Promise<core.responses.LnmQueryResponse> {
-    return core.lnm.query(this, checkoutRequestId);
+  public lnmQuery(checkoutRequestId): Promise<responses.LnmQueryResponse> {
+    return lnm.query(this, checkoutRequestId);
+  }
+
+  public c2bRegister(
+    confirmationUrl: string,
+    validationUrl: string
+  ): Promise<responses.C2bResponse> {
+    return c2b.register(this, confirmationUrl, validationUrl);
+  }
+
+  public c2bSimulate(
+    amount: number,
+    phoneNumber: number,
+    billRef: string,
+    commandId: string
+  ): Promise<responses.C2bResponse> {
+    return c2b.simulate(this, amount, phoneNumber, billRef, commandId);
   }
 }
