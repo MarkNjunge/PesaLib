@@ -9,7 +9,7 @@ Business short code and pass key can be found at the [Test credentials](https://
 
 * [x] Generate OAuth access token
 * [x] Lipa Na Mpesa online
-* [ ] C2B
+* [x] C2B
 * [ ] Reversal
 * [ ] Transaction status
 * [ ] B2B
@@ -65,6 +65,22 @@ Use this API to check the status of a Lipa Na M-Pesa Online Payment.
 pesalib.lnmQuery(checkoutRequestId)
 ```
 
+### [C2B - Register Url](https://developer.safaricom.co.ke/c2b/apis/post/registerurl)
+
+Use this API to register validation and confirmation URLs on M-Pesa
+
+```Typescript
+pesalib.c2bRegister(confirmationUrl, validationUrl)
+```
+
+### [C2B - Simulate Transaction](https://developer.safaricom.co.ke/c2b/apis/post/simulate)
+
+Use this API to simulate a C2B transaction
+
+```Typescript
+pesalib.c2bSimulate(amount, phoneNumber, billingRef, commandId)
+```
+
 # Disclaimer
 
-This is an unofficial package, not made by Safaricom
+This is an unofficial package, not made by Safaricom.
