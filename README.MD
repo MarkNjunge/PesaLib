@@ -1,5 +1,7 @@
 # Pesa Lib
 
+[![NPM](https://nodei.co/npm/pesa-lib.png)](https://npmjs.org/package/pesa-lib)
+
 An Node.js package for [Mpesa](https://www.safaricom.co.ke/personal/m-pesa).
 
 Before using this package, create an account on the [Safaricom Developer Portal](https://developer.safaricom.co.ke/) to receive a Consumer Key and Consumer Secret.  
