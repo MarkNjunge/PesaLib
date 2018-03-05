@@ -1,4 +1,4 @@
-import { c2b, lnm, oAuth, responses, security } from "./core";
+import * as core from "./core";
 
 export default class PesaLib {
   public consumerKey: string;
@@ -34,8 +34,8 @@ export default class PesaLib {
   /**
    * Returns an OAuth token from the Mpesa API
    */
-  public oAuth(): Promise<responses.OauthResponse> {
-    return oAuth(this);
+  public oAuth(): Promise<core.responses.OauthResponse> {
+    return core.oAuth(this);
   }
 
   /**
@@ -53,8 +53,8 @@ export default class PesaLib {
     callbackUrl: string,
     accountRef: string,
     transactionDesc: string
-  ): Promise<responses.LnmProcessResponse> {
-    return lnm.process(
+  ): Promise<core.responses.LnmProcessResponse> {
+    return core.lnm.process(
       this,
       amount,
       phoneNumber,
@@ -69,8 +69,8 @@ export default class PesaLib {
    *
    * @param checkoutRequestId Id received from a Lipa na M-Pesa request.
    */
-  public lnmQuery(checkoutRequestId): Promise<responses.LnmQueryResponse> {
-    return lnm.query(this, checkoutRequestId);
+  public lnmQuery(checkoutRequestId): Promise<core.responses.LnmQueryResponse> {
+    return core.lnm.query(this, checkoutRequestId);
   }
 
   /**
@@ -82,8 +82,8 @@ export default class PesaLib {
   public c2bRegister(
     confirmationUrl: string,
     validationUrl: string
-  ): Promise<responses.C2bResponse> {
-    return c2b.register(this, confirmationUrl, validationUrl);
+  ): Promise<core.responses.C2bResponse> {
+    return core.c2b.register(this, confirmationUrl, validationUrl);
   }
 
   /**
@@ -99,8 +99,8 @@ export default class PesaLib {
     phoneNumber: number,
     billRef: string,
     commandId: string
-  ): Promise<responses.C2bResponse> {
-    return c2b.simulate(this, amount, phoneNumber, billRef, commandId);
+  ): Promise<core.responses.C2bResponse> {
+    return core.c2b.simulate(this, amount, phoneNumber, billRef, commandId);
   }
 
   /**
@@ -112,6 +112,6 @@ export default class PesaLib {
    * @returns {string} Base64 encoded string
    */
   public security(credential, certPath): string {
-    return security(credential, certPath);
+    return core.security(credential, certPath);
   }
 }
