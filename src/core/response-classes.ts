@@ -44,3 +44,10 @@ export class C2bResponse {
   public OriginatorCoversationID: string;
   public ResponseDescription: string;
 }
+
+export class BalanceResponse {
+  public OriginatorConversationID: string;
+  public ConversationID: string;
+  public ResponseCode: string;
+  public ResponseDescription: string;
+}

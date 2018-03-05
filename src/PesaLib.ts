@@ -114,4 +114,40 @@ export default class PesaLib {
   public security(credential, certPath): string {
     return core.security(credential, certPath);
   }
+
+  /**
+   * Enquire MPesa balance.
+   *
+   * @param securityCredential Encrypted Credential of user.
+   * @param initiator The name of Initiator to initiating  the request.
+   * @param partyA Organization receiving the transaction.
+   * @param idType Type of organization receiving the transaction.
+   * 1 – MSISDN, 2 – Till Number, 4 – Organization short code
+   * @param remarks Comments that are sent along with the transaction.
+   * @param queueTimeoutUrl The path that stores information of time out transaction
+   * @param resultUrl	The path that stores information of transaction.
+   *
+   * @see PesaLib.security()
+   */
+  public balance(
+    securityCredential,
+    initiator,
+    partyA,
+    idType,
+    remarks,
+    queueTimeoutUrl,
+    resultUrl
+  ): Promise<core.responses.BalanceResponse> {
+    return core.balance(
+      this,
+      initiator,
+      securityCredential,
+      "AccountBalance",
+      partyA,
+      idType,
+      remarks,
+      queueTimeoutUrl,
+      resultUrl
+    );
+  }
 }

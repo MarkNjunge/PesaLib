@@ -12,6 +12,7 @@ Business short code and pass key can be found at the [Test credentials](https://
 * [x] Generate OAuth access token
 * [x] Lipa Na Mpesa online
 * [x] C2B
+* [x] Balance
 * [ ] Reversal
 * [ ] Transaction status
 * [ ] B2B
@@ -90,6 +91,14 @@ Encrypt credentials using a certificate file.
 
 ```Typescript
 pesalib.security(credential, pathToCert)
+```
+
+### [Account Balance](https://developer.safaricom.co.ke/account-balance/apis/post/query)
+
+Enquire the balance on an M-Pesa
+
+```Typescript
+pesalib.balance(securityCredential, initiator, partyA, idType, remarks, queueTimeoutUrl, resultUrl)
 ```
 
 # Disclaimer

@@ -61,6 +61,22 @@ function c2bSimulate() {
 }
 
 function security() {
-  const cred = pesa.security("password", "./src/sandbox-cert.cer");
+  const cred = pesa.security("460reset", "./src/sandbox-cert.cer");
   console.log(cred);
+}
+
+function balance() {
+  const cred = pesa.security("460reset", "./src/sandbox-cert.cer");
+  pesa
+    .balance(
+      cred,
+      "apitest460",
+      "601460",
+      "4",
+      "Remarks",
+      "https://151d6ca3.ngrok.io/post",
+      "https://151d6ca3.ngrok.io/post"
+    )
+    .then(response => console.log(response))
+    .catch(error => console.log(error.message));
 }
