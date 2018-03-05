@@ -1,6 +1,6 @@
 {
   "name": "pesa-lib",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Node.js package for Mpesa.",
   "main": "build/PesaLib.js",
   "types": "build/PesaLib.d.ts",
@@ -11,7 +11,9 @@
     "prestart": "tsc",
     "start": "node build/sample.js"
   },
-  "keywords": ["mpesa"],
+  "keywords": [
+    "mpesa"
+  ],
   "bugs": {
     "email": "mark.kamau@outlook.com",
     "url": "https://github.com/MarkNjunge/PesaLib/issues"
