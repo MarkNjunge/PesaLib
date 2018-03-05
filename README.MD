@@ -37,7 +37,8 @@ const pesalib = new PesaLib(
   consumerKey,
   consumerSecret,
   businessShortCode,
-  passKey
+  passKey,
+  baseUrl // Optional. Used to switch from sandbox to production.
 );
 ```
 
@@ -81,6 +82,14 @@ Use this API to simulate a C2B transaction
 
 ```Typescript
 pesalib.c2bSimulate(amount, phoneNumber, billingRef, commandId)
+```
+
+### [Security Credentials](https://developer.safaricom.co.ke/docs#security-credentials)
+
+Encrypt credentials using a certificate file.
+
+```Typescript
+pesalib.security(credential, pathToCert)
 ```
 
 # Disclaimer
