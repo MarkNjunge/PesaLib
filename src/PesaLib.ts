@@ -31,10 +31,22 @@ export default class PesaLib {
     this.baseUrl = baseUrl;
   }
 
+  /**
+   * Returns an OAuth token from the Mpesa API
+   */
   public oAuth(): Promise<responses.OauthResponse> {
     return oAuth(this);
   }
 
+  /**
+   * Create a Lipa Na M-Pesa request.
+   *
+   * @param amount The amount to be paid.
+   * @param phoneNumber The phone number of the customer. Should start with 254.
+   * @param callbackUrl Callback url to handle the payment response.
+   * @param accountRef A reference for the payment.
+   * @param transactionDesc Description of the payment.
+   */
   public lnmProcess(
     amount: string,
     phoneNumber: string,
@@ -52,10 +64,21 @@ export default class PesaLib {
     );
   }
 
+  /**
+   * Check the status of a Lipa Na M-Pesa request.
+   *
+   * @param checkoutRequestId Id received from a Lipa na M-Pesa request.
+   */
   public lnmQuery(checkoutRequestId): Promise<responses.LnmQueryResponse> {
     return lnm.query(this, checkoutRequestId);
   }
 
+  /**
+   * Register validation and confirmation URLs.
+   *
+   * @param confirmationUrl See documentation
+   * @param validationUrl See documentation
+   */
   public c2bRegister(
     confirmationUrl: string,
     validationUrl: string
@@ -63,6 +86,14 @@ export default class PesaLib {
     return c2b.register(this, confirmationUrl, validationUrl);
   }
 
+  /**
+   * Simulate a C2B transaction.
+   *
+   * @param amount Amount to be paid.
+   * @param phoneNumber The phone number of the customer. Should start with 254.
+   * @param billRef Bill referernce number.
+   * @param commandId CustomerPayBillOnline or CustomerBuyGoodsOnline.
+   */
   public c2bSimulate(
     amount: number,
     phoneNumber: number,
