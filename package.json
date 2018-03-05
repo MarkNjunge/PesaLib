@@ -11,9 +11,7 @@
     "prestart": "tsc",
     "start": "node build/sample.js"
   },
-  "keywords": [
-    "mpesa"
-  ],
+  "keywords": ["mpesa"],
   "bugs": {
     "email": "mark.kamau@outlook.com",
     "url": "https://github.com/MarkNjunge/PesaLib/issues"

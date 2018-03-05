@@ -1,4 +1,6 @@
 // tslint:disable:no-console
+import * as fs from "fs";
+import * as path from "path";
 import { consumerKey, consumerSecret } from "./config";
 import { ApiError } from "./core/response-classes";
 import PesaLib from "./PesaLib";
@@ -56,4 +58,9 @@ function c2bSimulate() {
     .c2bSimulate(1, 254721234567, "Test billing", "CustomerBuyGoodsOnline")
     .then(response => console.log(response))
     .catch(error => console.log(error.message));
+}
+
+function security() {
+  const cred = pesa.security("password", "./src/sandbox-cert.cer");
+  console.log(cred);
 }

@@ -1,4 +1,4 @@
-import { c2b, lnm, oAuth, responses } from "./core";
+import { c2b, lnm, oAuth, responses, security } from "./core";
 
 export default class PesaLib {
   public consumerKey: string;
@@ -101,5 +101,17 @@ export default class PesaLib {
     commandId: string
   ): Promise<responses.C2bResponse> {
     return c2b.simulate(this, amount, phoneNumber, billRef, commandId);
+  }
+
+  /**
+   * Encrypt data using a certificate file.
+   *
+   * @param credential Data to be encrypted. For sandbox use shorcode 1, for produciton use initiator password.
+   * @param certData Path to the certificate file.
+   *
+   * @returns {string} Base64 encoded string
+   */
+  public security(credential, certPath): string {
+    return security(credential, certPath);
   }
 }

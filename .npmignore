@@ -1,3 +1,4 @@
 build
 src/sample.ts
 *.log
+src/sandbox-cert.cer
