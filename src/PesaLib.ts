@@ -137,7 +137,7 @@ export default class PesaLib {
     remarks,
     queueTimeoutUrl,
     resultUrl
-  ): Promise<core.responses.BalanceResponse> {
+  ): Promise<core.responses.GeneralResponse> {
     return core.balance(
       this,
       initiator,
@@ -148,6 +148,48 @@ export default class PesaLib {
       remarks,
       queueTimeoutUrl,
       resultUrl
+    );
+  }
+
+  /**
+   * Use this api to check the transaction status.
+   *
+   * @param identifierType Type of organization receiving the transaction
+   * 1 – MSISDN
+   * 2 – Till Number
+   * 4 – Organization short code
+   * @param remarks Comments that are sent along with the transaction. Up to 100 chars.
+   * @param initiator This is the credential/username used to authenticate the transaction request.
+   * @param securityCredential Encrypted password for the initiator to authenticate the transaction request
+   * @param queueTimeoutUrl The path that stores information of time out transaction.
+   * @param resultUrl The path that stores information of transaction.
+   * @param transactionId Organization Receiving the funds.
+   * @param occassion Optional. Up to 100 chars.
+   *
+   * @see PesaLib.security()
+   */
+  public transactionStatus(
+    identifierType: number,
+    remarks: string,
+    initiator: string,
+    securityCredential: string,
+    queueTimeoutUrl: string,
+    resultUrl: string,
+    transactionId: string,
+    occassion?: string
+  ): Promise<core.responses.GeneralResponse> {
+    return core.tranactionStatus(
+      this,
+      "TransactionStatusQuery",
+      this.shortCode,
+      identifierType.toString(),
+      remarks,
+      initiator,
+      securityCredential,
+      queueTimeoutUrl,
+      resultUrl,
+      transactionId,
+      occassion
     );
   }
 }

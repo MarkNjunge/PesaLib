@@ -80,3 +80,19 @@ function balance() {
     .then(response => console.log(response))
     .catch(error => console.log(error.message));
 }
+
+function trasactionStatus() {
+  pesa
+    .transactionStatus(
+      1,
+      "Some remarks",
+      "460reset",
+      pesa.security("460reset", "./src/sandbox-cert.cer"),
+      "https://39df448a.ngrok.io/post",
+      "https://39df448a.ngrok.io/post",
+      "LKXXXX1234",
+      "Occ"
+    )
+    .then(response => console.log(response))
+    .catch(error => console.log(error.message));
+}

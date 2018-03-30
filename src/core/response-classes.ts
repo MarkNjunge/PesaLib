@@ -45,7 +45,7 @@ export class C2bResponse {
   public ResponseDescription: string;
 }
 
-export class BalanceResponse {
+export class GeneralResponse {
   public OriginatorConversationID: string;
   public ConversationID: string;
   public ResponseCode: string;
