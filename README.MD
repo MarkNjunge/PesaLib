@@ -13,8 +13,8 @@ Business short code and pass key can be found at the [Test credentials](https://
 * [x] Lipa Na Mpesa online
 * [x] C2B
 * [x] Balance
+* [x] Transaction status
 * [ ] Reversal
-* [ ] Transaction status
 * [ ] B2B
 * [ ] B2C
 
@@ -99,6 +99,14 @@ Enquire the balance on an M-Pesa
 
 ```Typescript
 pesalib.balance(securityCredential, initiator, partyA, idType, remarks, queueTimeoutUrl, resultUrl)
+```
+
+### [Transaction Status](https://developer.safaricom.co.ke/transaction-status/apis/post/query)
+
+Use this api to check the transaction status.
+
+```Typescript
+pesa.transactionStatus(identifierType, remarks, initiator, securityCredential, queueTimeoutUrl, resultTimeoutUrl, transactionId, occassion)
 ```
 
 # Disclaimer
