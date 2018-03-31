@@ -9,7 +9,7 @@ Business short code and pass key can be found at the [Test credentials](https://
 
 ## Features
 
-* [x] Generate OAuth access token
+* [x] [Generate OAuth access token](#oauth)
 * [x] Lipa Na Mpesa online
 * [x] C2B
 * [x] Balance
