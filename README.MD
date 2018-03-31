@@ -43,7 +43,8 @@ const pesalib = new PesaLib(
 );
 ```
 
-### [OAuth access token](https://developer.safaricom.co.ke/oauth/apis/get/generate-1)
+### [OAuth access token](https://developer.safaricom.co.ke/oauth/apis/get/generate-1)  
+[.](#oauth)
 
 Use this API to generate an OAuth access token to access other APIs.  
 Other methods with use do this automatically so it's not needed.
