@@ -163,7 +163,7 @@ export default class PesaLib {
    * @param securityCredential Encrypted password for the initiator to authenticate the transaction request
    * @param queueTimeoutUrl The path that stores information of time out transaction.
    * @param resultUrl The path that stores information of transaction.
-   * @param transactionId Organization Receiving the funds.
+   * @param transactionId M-Pesa reference number (LKXXXX1234).
    * @param occassion Optional. Up to 100 chars.
    *
    * @see PesaLib.security()
