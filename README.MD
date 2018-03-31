@@ -10,10 +10,10 @@ Business short code and pass key can be found at the [Test credentials](https://
 ## Features
 
 * [x] [Generate OAuth access token](#oauth)
-* [x] Lipa Na Mpesa online
-* [x] C2B
-* [x] Balance
-* [x] Transaction status
+* [x] [Lipa Na Mpesa online](#lnmo)
+* [x] [C2B](#c2b)
+* [x] [Balance](#balance)
+* [x] [Transaction status](#transaction)
 * [ ] Reversal
 * [ ] B2B
 * [ ] B2C
@@ -52,7 +52,7 @@ Other methods with use do this automatically so it's not needed.
 pesaLib.oAuth()
 ```
 
-### [Lipa na Mpesa Online - Process request](https://developer.safaricom.co.ke/lipa-na-m-pesa-online/apis/post/stkpush/v1/processrequest)
+### [Lipa na Mpesa Online - Process request](https://developer.safaricom.co.ke/lipa-na-m-pesa-online/apis/post/stkpush/v1/processrequest)<a name="lnmo"></a>
 
 Use this API to initiate online payment on behalf of a customer.  
 Phone number should begin with 254.
@@ -69,7 +69,7 @@ Use this API to check the status of a Lipa Na M-Pesa Online Payment.
 pesalib.lnmQuery(checkoutRequestId)
 ```
 
-### [C2B - Register Url](https://developer.safaricom.co.ke/c2b/apis/post/registerurl)
+### [C2B - Register Url](https://developer.safaricom.co.ke/c2b/apis/post/registerurl)<a name="c2b"></a>
 
 Use this API to register validation and confirmation URLs on M-Pesa
 
@@ -93,7 +93,7 @@ Encrypt credentials using a certificate file.
 pesalib.security(credential, pathToCert)
 ```
 
-### [Account Balance](https://developer.safaricom.co.ke/account-balance/apis/post/query)
+### [Account Balance](https://developer.safaricom.co.ke/account-balance/apis/post/query)<a name="balance"></a>
 
 Enquire the balance on an M-Pesa
 
@@ -101,7 +101,7 @@ Enquire the balance on an M-Pesa
 pesalib.balance(securityCredential, initiator, partyA, idType, remarks, queueTimeoutUrl, resultUrl)
 ```
 
-### [Transaction Status](https://developer.safaricom.co.ke/transaction-status/apis/post/query)
+### [Transaction Status](https://developer.safaricom.co.ke/transaction-status/apis/post/query)<a name="transaction"></a>
 
 Use this api to check the transaction status.
 
