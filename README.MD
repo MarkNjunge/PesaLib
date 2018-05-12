@@ -39,7 +39,7 @@ const pesalib = new PesaLib(
   consumerSecret,
   businessShortCode,
   passKey,
-  baseUrl // Optional. Used to switch from sandbox to production.
+  false // Use 'true' to change to live url.
 );
 ```
 
