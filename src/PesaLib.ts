@@ -5,6 +5,7 @@ export default class PesaLib {
   public consumerSecret: string;
   public shortCode: string;
   public passKey: string;
+  public production: boolean;
   public baseUrl: string;
 
   /**
@@ -13,7 +14,7 @@ export default class PesaLib {
    * @param consumerSecret Obtained from the developer portal
    * @param shortCode Obtained from the developer portal
    * @param passKey Obtained from the developer portal
-   * @param baseUrl Used for sandbox vs live. Defaults to sandbox. For live, pass https://api.safaricom.co.ke
+   * @param production Used for sandbox vs live. Defaults to false.
    *
    * @see https://developer.safaricom.co.ke
    */
@@ -22,13 +23,18 @@ export default class PesaLib {
     consumerSecret: string,
     shortCode: string,
     passKey: string,
-    baseUrl: string = "https://sandbox.safaricom.co.ke"
+    production: boolean = false
   ) {
     this.consumerKey = consumerKey;
     this.consumerSecret = consumerSecret;
     this.shortCode = shortCode;
     this.passKey = passKey;
-    this.baseUrl = baseUrl;
+    this.production = production;
+    if (production) {
+      this.baseUrl = "https://api.safaricom.co.ke";
+    } else {
+      this.baseUrl = "https://sandbox.safaricom.co.ke";
+    }
   }
 
   /**
