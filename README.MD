@@ -26,6 +26,7 @@ Business short code and pass key can be found at the [Test credentials](https://
 
 * All methods return a promise.
 * See [Sample.ts](./src/sample.ts)
+* See the [wiki](https://github.com/MarkNjunge/PesaLib/wiki) for more documentation.
 
 ### Initialization
 
