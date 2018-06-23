@@ -1,3 +1,7 @@
+# Notice
+
+I will no longer be maintaining this library. I suggest using [mpesa-node](https://github.com/safaricom/mpesa-node-library) instead.
+
 # Pesa Lib
 
 [![NPM](https://nodei.co/npm/pesa-lib.png)](https://npmjs.org/package/pesa-lib)
@@ -9,14 +13,14 @@ Business short code and pass key can be found at the [Test credentials](https://
 
 ## Features
 
-* [x] [Generate OAuth access token](#oauth)
-* [x] [Lipa Na Mpesa online](#lnmo)
-* [x] [C2B](#c2b)
-* [x] [Balance](#balance)
-* [x] [Transaction status](#transaction)
-* [ ] Reversal
-* [ ] B2B
-* [ ] B2C
+- [x] [Generate OAuth access token](#oauth)
+- [x] [Lipa Na Mpesa online](#lnmo)
+- [x] [C2B](#c2b)
+- [x] [Balance](#balance)
+- [x] [Transaction status](#transaction)
+- [ ] Reversal
+- [ ] B2B
+- [ ] B2C
 
 ## Installation
 
@@ -24,9 +28,9 @@ Business short code and pass key can be found at the [Test credentials](https://
 
 ## Usage
 
-* All methods return a promise.
-* See [Sample.ts](./src/sample.ts)
-* See the [wiki](https://github.com/MarkNjunge/PesaLib/wiki) for more documentation.
+- All methods return a promise.
+- See [Sample.ts](./src/sample.ts)
+- See the [wiki](https://github.com/MarkNjunge/PesaLib/wiki) for more documentation.
 
 ### Initialization
 
